@@ -15,7 +15,6 @@
         {   max: 400000,
             min: 10000,
             change: update_all,
-            step:500,
             slide: function( event, theSlider) {
                 $( "#amount" ).text( "$" + theSlider.value );
                 $("#price").text("$" + theSlider.value * 5);
@@ -30,7 +29,6 @@
         {   
             min: 200,
             max: 50000,
-            step:50,
             change: house_calc,
             
             slide: function( event, theSlider) {
@@ -47,7 +45,7 @@
             min:200,
             max: 50000,
             change:house_calc,
-            step:50,
+
             slide: function( event, theSlider){
                 $('#output_rent_income').text('$' + theSlider.value );
             }
@@ -57,9 +55,13 @@
     $( "#input_percent" ).slider(
         {   max: 20,
             min: 0,
-            step:.5,
             change: stock_calc,
-            slide: stock_calc
+            slide: function( event, theSlider) {
+                $( "#output_percent" ).text( "Percentage  " +  theSlider.value );
+            
+
+
+            }
         }
     );
 
@@ -73,44 +75,6 @@
             }
         }
     );
-
-
-    $( "#input_appreciation" ).slider(
-        {   max: 30,
-            min: 0,
-            step:.5,
-            change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_appreciation" ).text( "Yearly Appreciation  " + theSlider.value );
-
-            }
-        }
-    );
-
-    $( "#input_vacancy" ).slider(
-        {   max: 100,
-            min: 0,
-            step:.5,
-            change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_vacancy" ).text( "Yearly Vacancy Rate  " + theSlider.value );
-
-            }
-        }
-    );
-
-    $( "#input_maintenance" ).slider(
-        {   max: 100000,
-            min: 0,
-            step:50,
-            change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_maintenance" ).text( "Yearly Maintenance Amount  " + theSlider.value );
-
-            }
-        }
-    );
-
   } );
 function update_all(){
 
@@ -121,46 +85,23 @@ function update_all(){
 function house_calc(){
     // let funds = $("#input_investment").slider('value')
     let down_payment = $("#input_investment").slider('value')
-    let original_house_price = down_payment * 5
+    let house_price = down_payment * 5
     let monthly_payment = $("#input_mortgage").slider('value')
     let rental_income = $("#input_rent").slider('value')
     let years =  $("#input_years").slider('value')
-    let appreciation_perc = $('#input_appreciation').slider('value')
-    let vacancy_rate = $("#input_vacancy").slider('value')
-    let yearly_maintenance = $("#input_maintenance").slider('value')
 
-    // console.log(house_price, rental_income)
-    let occupancy_rate =( 100 - vacancy_rate) / 100.0;
+    console.log(house_price, rental_income)
 
-    let yearly_cost = monthly_payment * 12 + yearly_maintenance;
-    let yearly_income = rental_income * 12 * occupancy_rate;
+    let yearly_cost = monthly_payment * 12;
+    let yearly_income= rental_income * 12;
     
-    // console.log(yearly_income, yearly_cost)
+    console.log(yearly_income, yearly_cost)
 
-    // appreciation calculation
-
-    let current_year = 0
-    let house_price=original_house_price;
-    while( current_year < years) {
-        one_year_interest = house_price * appreciation_perc / 100.0;
-        house_price = house_price + one_year_interest;
-
-        current_year +=1
-        
-
-    }
-
-    let net_price_gain = house_price - original_house_price;
-    let cost_of_sales = .06 * house_price;
     let total_cost = yearly_cost * years;
     let total_income = yearly_income * years;
-
-    let total_net = total_income - total_cost + net_price_gain - cost_of_sales;
-
+    let total_net = total_income - total_cost;
     console.log(total_net)
     $('#house_calculation_results').text(total_net)
-
-
 
 }
 
@@ -170,7 +111,6 @@ function stock_calc(){
     let funds = $("#input_investment").slider('value')
     let percent =  $("#input_percent").slider('value')
     let years =  $("#input_years").slider('value')
-    $( "#output_percent" ).text( "Percentage  " +  percent );
     let percentage = percent * .01
 
 
@@ -187,7 +127,7 @@ function stock_calc(){
     }
 
 
-    $("#stock_calculation_results").text(total_money - funds)
+    $("#stock_calculation_results").text(total_money)
 
 //    console.log(total_money)
    console.log(funds,percentage, years )
@@ -195,19 +135,7 @@ function stock_calc(){
 
 }
 
-function historical_market(){
-    $("#input_investment").slider('value', 50000)
-    $("#input_vacancy").slider('value', 1.5)
-    $("#input_mortgage").slider('value', 1200)
-    $("#input_maintenance").slider('value', 750)
-    $("#input_rent").slider('value', 1200)
-    $("#input_appreciation").slider('value', 3.5)
-    $("#input_years").slider('value', 10)
-    $("#input_percent").slider('value', 8)
 
-
-
-}
 
   </script>
 </head>
@@ -230,37 +158,15 @@ function historical_market(){
 </div>
 
 <div id="house"><h2>House Calculations</h2>
-    
     <!-- <div id="price">$ House Price </div> -->
-    <div><h3>House Mortgage</h3></div>
+
     <div id="input_mortgage"></div>
     <div id="monthlyPayment">$ Monthly Payment</div>
 
-    <div><h3>Monthly Rental Icome</h3></div>
     <div id="input_rent"></div>
     <div id="output_rent_income">$ Monthly Rental Income</div>
 
-    
-    <!-- yearly maintenance input per year -->
-    <div><h3>Yearly Maintenance Ammount</h3></div>
-    <div id="input_maintenance"></div>
-    <div id="output_maintenance">$ Yearly Maintenance</div>
-
-    <!-- appreciation estimate per year -->
-    <div><h3>Vacancy Rate</h3></div>
-    <div id="input_vacancy"></div>
-    <div id="output_vacancy">Rental Vacancy Rate</div>
-
-    <!-- appreciation estimate per year -->
-    <div><h3>House Appreciation Percentage Yearly</h3></div>
-    <div id="input_appreciation"></div>
-    <div id="output_appreciation">House appreciation</div>
-    
     <div id="house_calculation_results">House Calculation Results</div>
-
-    <button onclick="historical_market()" >Historical Market</button>
-
-
 </div>
 
 
