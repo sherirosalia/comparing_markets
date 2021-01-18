@@ -16,29 +16,25 @@
             min: 10000,
             change: update_all,
             step:500,
-            slide: function( event, theSlider) {
-                $( "#amount" ).text( "$" + theSlider.value );
-                $("#price").text("$" + theSlider.value * 5);
-                // $("#return").text("$" + theSlider.value * 5);
-
-
-            }
+            slide: update_all
         }
     );
 
+
+    $( "#input_years" ).slider(
+        {   max: 30,
+            min: 0,
+            change: update_all,
+            slide: update_all
+        }
+    );
     $( "#input_mortgage" ).slider(
         {   
             min: 200,
             max: 50000,
             step:50,
-            change: house_calc,
-            
-            slide: function( event, theSlider) {
-                $( "#monthlyPayment" ).text( "$" + theSlider.value );
-                // $("#price").text("$" + theSlider.value * 5);
-                // $("#return").text("$" + theSlider.value * 5);
-
-            }
+            change: house_calc,            
+            slide: house_calc
         }
     );
 
@@ -46,11 +42,9 @@
         {
             min:200,
             max: 50000,
-            change:house_calc,
             step:50,
-            slide: function( event, theSlider){
-                $('#output_rent_income').text('$' + theSlider.value );
-            }
+            change:house_calc,
+            slide: house_calc
         }
     )
 
@@ -63,27 +57,14 @@
         }
     );
 
-    $( "#input_years" ).slider(
-        {   max: 30,
-            min: 0,
-            change: update_all,
-            slide: function( event, theSlider) {
-                $( "#output_years" ).text( "Number of Years  " + theSlider.value );
-
-            }
-        }
-    );
-
 
     $( "#input_appreciation" ).slider(
         {   max: 30,
             min: 0,
             step:.5,
             change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_appreciation" ).text( "Yearly Appreciation  " + theSlider.value );
-
-            }
+            slide: house_calc
+            
         }
     );
 
@@ -92,10 +73,7 @@
             min: 0,
             step:.5,
             change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_vacancy" ).text( "Yearly Vacancy Rate  " + theSlider.value );
-
-            }
+            slide: house_calc
         }
     );
 
@@ -104,10 +82,7 @@
             min: 0,
             step:50,
             change: house_calc,
-            slide: function( event, theSlider) {
-                $( "#output_maintenance" ).text( "Yearly Maintenance Amount  " + theSlider.value );
-
-            }
+            slide: house_calc
         }
     );
 
@@ -116,6 +91,14 @@ function update_all(){
 
     house_calc()
     stock_calc()
+
+    let years = $("#input_years").slider('value')
+    let investment_amount = $("#input_investment").slider('value')
+    let house_price = investment_amount * 5
+
+    $( "#amount" ).text( "$" + investment_amount);
+    $("#price").text("$" + house_price );
+    $( "#output_years" ).text( "Number of Years  " + years );
 }
 // stock calculation results
 function house_calc(){
@@ -129,6 +112,14 @@ function house_calc(){
     let vacancy_rate = $("#input_vacancy").slider('value')
     let yearly_maintenance = $("#input_maintenance").slider('value')
 
+    $( "#output_maintenance" ).text( "Yearly Maintenance Amount  " + yearly_maintenance );
+    $( "#output_vacancy" ).text( "Yearly Vacancy Rate  " + vacancy_rate );
+    $( "#output_appreciation" ).text( "Yearly Appreciation  " + appreciation_perc);
+    $( "#output_rent_income" ).text( "Rental Income  " + rental_income);
+    $( "#monthlyPayment" ).text( "$" + monthly_payment );
+    
+
+          
     // console.log(house_price, rental_income)
     let occupancy_rate =( 100 - vacancy_rate) / 100.0;
 
@@ -231,7 +222,8 @@ function historical_market(){
 
 <div id="house"><h2>House Calculations</h2>
     
-    <!-- <div id="price">$ House Price </div> -->
+    <div><h3> House price as calculated</h3></div>
+    <div id="price">$ House Price </div>
     <div><h3>House Mortgage</h3></div>
     <div id="input_mortgage"></div>
     <div id="monthlyPayment">$ Monthly Payment</div>
