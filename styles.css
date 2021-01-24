@@ -44,6 +44,9 @@ li {
     flex: 1;
 }
 
+ol {
+    list-style-type:none 
+}
 .button-container {
     /* display: flex; */
     background-color: silver;

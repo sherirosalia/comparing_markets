@@ -38,16 +38,16 @@
     <div class="button_container">
         <ul>
             <li>
-                <button onclick="historical_market()" >Historical Market</button>
+                <button onclick="ideal_real_estate_market()" >Strong Real Estate (5%)</button>
             </li>
             <li>
-                <button onclick="historical_market()" > Suburban </button>
+                <button onclick="snp_10()" > 10 Year S&P (13.6%)</button>
             </li>
             <li>
-                <button onclick="historical_market()" >High Interest Rate</button>
+                <button onclick="stock_average()" >Stock Average (9.3%)</button>
             </li>
             <li>
-                <button onclick="historical_market()" >Urban</button>
+                <button onclick="thirty_years()" >30 Years</button>
             </li>
         </ul>
     </div>   <!-- end of button container -->
@@ -62,13 +62,48 @@
         <div id="chart" style="width:700px;height:350px;"></div>
     </div>  
 
+    <div class="intro-container">
+
+        <div class="explanation">
+            <h2>Where are you going to put your money?</h2>
+            <p>This site is essentially an application to help understand the 
+                how investing in the stock market compares to real estate. 
+                The basic framework is finished. Right now all of the buttons 
+                produce only one calculation, and the names are placeholders.
+                Additonal calculations and explanation text is currently in progress.
+                Please enjoy playing with the inputs that will display final 
+                results in the chart above.
+            </p>
+            <h2>Helpful References</h2>
+            
+            <ol>
+                <li>
+                    <a href="">Buy vs. Rent</a>
+                </li>
+                <li>
+                    <a href="https://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx?pid=sembrmtg&ttcid=%2Bmortgage%7Cc%7Ckwd-1690752741%7Cg%7C9061181&utm_source=google&utm_medium=cpc&utm_term=%2Bmortgage&utm_cmpid=12005892161&utm_adgid=112813884901&utm_tgtid=kwd-1690752741&utm_mt=b&utm_adid=490037143829&utm_dvc=c&utm_ntwk=g&utm_adpos=&utm_plcmnt=&utm_locphysid=9061181&utm_locintid=&utm_feeditemid=26501184656&utm_devicemdl=&utm_plcmnttgt=&utm_campaign=sembrmtg&utm_kwdid=%7Bkwdid%7D&gclid=Cj0KCQiA0rSABhDlARIsAJtjfCcL2DSGHRg07NejzBot1qb3n4bPJ54D0UJdPBcouxLBF5cg_l14MWgaAqffEALw_wcB">Mortgage Calculator</a>
+
+                </li>
+                <li>
+                    <a href="https://www.businessinsider.com/personal-finance/average-stock-market-return">Historical Stock Market Returns</a>
+                </li>
+                <li>
+                    <a href="https://michaelbluejay.com/house/appreciation.html">Long Term Real Estate Appreciation</a>
+                </li>
+            </ol>
+        
+
+        </div>   <!-- end of explanation div -->
+
+    </div> <!-- end of grid container div -->
+
 <!-- div container to hold financial investment and term-->
     <div class="investment-container">
-        <div class="make-selections" style="">
+        <div class="make-selections">
             <h2>Investment Inputs</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
                 cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
-                quaerat dignissimos nemo.
+                quaerat dignissimos nemo. 
             </p>
         </div>
 
@@ -91,7 +126,7 @@
         <h2>Stock Market</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
             cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
-            quaerat dignissimos nemo.
+            quaerat dignissimos nemo. References: <a href="https://www.businessinsider.com/personal-finance/average-stock-market-return">Historical Stock Market Results</a>
         </p>
     </div>
 
@@ -120,7 +155,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
             cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
             quaerat dignissimos nemo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Dolores possimus numquam, quis vitae minus quos.
+            Dolores possimus numquam, quis vitae minus quos. References: <a href="https://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx?pid=sembrmtg&ttcid=%2Bmortgage%7Cc%7Ckwd-1690752741%7Cg%7C9061181&utm_source=google&utm_medium=cpc&utm_term=%2Bmortgage&utm_cmpid=12005892161&utm_adgid=112813884901&utm_tgtid=kwd-1690752741&utm_mt=b&utm_adid=490037143829&utm_dvc=c&utm_ntwk=g&utm_adpos=&utm_plcmnt=&utm_locphysid=9061181&utm_locintid=&utm_feeditemid=26501184656&utm_devicemdl=&utm_plcmnttgt=&utm_campaign=sembrmtg&utm_kwdid=%7Bkwdid%7D&gclid=Cj0KCQiA0rSABhDlARIsAJtjfCcL2DSGHRg07NejzBot1qb3n4bPJ54D0UJdPBcouxLBF5cg_l14MWgaAqffEALw_wcB">Mortgage Calculator</a>
         </p>
     </div>
 
@@ -163,7 +198,7 @@
 
 
 </div>
-
+<script src="button_functions.js"></script>
 
     
 </body>

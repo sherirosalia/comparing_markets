@@ -82,18 +82,25 @@ $( function() {
   stock_graph = {
   x: [1, 2, 3, 4],
   y: [10, 15, 13, 17],
-  type: 'lines+markers'
+  type: 'lines+markers',
+  name: 'Stocks'
+  
   };
 
   house_graph = {
   x: [1, 2, 3, 4],
   y: [16, 5, 11, 9],
-  type: 'lines+markers'
+  type: 'lines+markers',
+  name: 'Real Estate'
   };
 
+  var layout = {
+    title:'Adding Names to Line and Scatter Plot'
+  };
+  
   let data = [stock_graph, house_graph];
 
-  Plotly.newPlot('chart', data);
+  Plotly.newPlot('chart', data, layout);
 
 } );
 function update_all(){
@@ -215,19 +222,17 @@ function stock_calc(){
 
 
 }
+//  button functions 
+// function historical_market(){
+//   $("#input_investment").slider('value', 50000)
+//   $("#input_vacancy").slider('value', 1.5)
+//   $("#input_mortgage").slider('value', 1200)
+//   $("#input_maintenance").slider('value', 750)
+//   $("#input_rent").slider('value', 1200)
+//   $("#input_appreciation").slider('value', 3.5)
+//   $("#input_years").slider('value', 10)
+//   $("#input_percent").slider('value', 8)
 
-function historical_market(){
-  $("#input_investment").slider('value', 50000)
-  $("#input_vacancy").slider('value', 1.5)
-  $("#input_mortgage").slider('value', 1200)
-  $("#input_maintenance").slider('value', 750)
-  $("#input_rent").slider('value', 1200)
-  $("#input_appreciation").slider('value', 3.5)
-  $("#input_years").slider('value', 10)
-  $("#input_percent").slider('value', 8)
-
-
-
-}
+// }
 
 
