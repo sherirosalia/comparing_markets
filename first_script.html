@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investment Calculator</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  $( function() {
+    $( "#input_investment" ).slider(
+        {   max: 400000,
+            min: 10000,
+            change: update_all,
+            slide: function( event, theSlider) {
+                $( "#amount" ).text( "$" + theSlider.value );
+                $("#price").text("$" + theSlider.value * 5);
+                // $("#return").text("$" + theSlider.value * 5);
+
+
+            }
+        }
+    );
+
+    $( "#input_mortgage" ).slider(
+        {   
+            min: 200,
+            max: 50000,
+            change: house_calc,
+            
+            slide: function( event, theSlider) {
+                $( "#monthlyPayment" ).text( "$" + theSlider.value );
+                // $("#price").text("$" + theSlider.value * 5);
+                // $("#return").text("$" + theSlider.value * 5);
+
+            }
+        }
+    );
+
+    $('#input_rent').slider(
+        {
+            min:200,
+            max: 50000,
+            change:house_calc,
+
+            slide: function( event, theSlider){
+                $('#output_rent_income').text('$' + theSlider.value );
+            }
+        }
+    )
+
+    $( "#input_percent" ).slider(
+        {   max: 20,
+            min: 0,
+            change: stock_calc,
+            slide: function( event, theSlider) {
+                $( "#output_percent" ).text( "Percentage  " +  theSlider.value );
+            
+
+
+            }
+        }
+    );
+
+    $( "#input_years" ).slider(
+        {   max: 30,
+            min: 0,
+            change: update_all,
+            slide: function( event, theSlider) {
+                $( "#output_years" ).text( "Number of Years  " + theSlider.value );
+
+            }
+        }
+    );
+  } );
+function update_all(){
+
+    house_calc()
+    stock_calc()
+}
+// stock calculation results
+function house_calc(){
+    // let funds = $("#input_investment").slider('value')
+    let down_payment = $("#input_investment").slider('value')
+    let house_price = down_payment * 5
+    let monthly_payment = $("#input_mortgage").slider('value')
+    let rental_income = $("#input_rent").slider('value')
+    let years =  $("#input_years").slider('value')
+
+    console.log(house_price, rental_income)
+
+    let yearly_cost = monthly_payment * 12;
+    let yearly_income= rental_income * 12;
+    
+    console.log(yearly_income, yearly_cost)
+
+    let total_cost = yearly_cost * years;
+    let total_income = yearly_income * years;
+    let total_net = total_income - total_cost;
+    console.log(total_net)
+    $('#house_calculation_results').text(total_net)
+
+}
+
+function stock_calc(){
+    // stock_calculation_results
+
+    let funds = $("#input_investment").slider('value')
+    let percent =  $("#input_percent").slider('value')
+    let years =  $("#input_years").slider('value')
+    let percentage = percent * .01
+
+
+    let total_money = funds
+    let current_year = 0
+
+    while( current_year < years) {
+        one_year_interest = total_money * percentage
+        total_money = total_money + one_year_interest
+
+        current_year +=1
+        
+
+    }
+
+
+    $("#stock_calculation_results").text(total_money)
+
+//    console.log(total_money)
+   console.log(funds,percentage, years )
+
+
+}
+
+
+
+  </script>
+</head>
+<body>
+ 
+
+<div id="input_investment"></div>
+
+
+<div id="amount">$ Amount Invested </div>
+
+<div id="input_years"></div>
+<div id="output_years"># Number of Years</div>
+
+
+<div id="stock_calc"><h2>Stock Calculations</h2>
+    <div id="input_percent"></div>
+    <div id="output_percent">Percentage %</div>
+    <div id="stock_calculation_results">Stock Calculation Results</div>
+</div>
+
+<div id="house"><h2>House Calculations</h2>
+    <!-- <div id="price">$ House Price </div> -->
+
+    <div id="input_mortgage"></div>
+    <div id="monthlyPayment">$ Monthly Payment</div>
+
+    <div id="input_rent"></div>
+    <div id="output_rent_income">$ Monthly Rental Income</div>
+
+    <div id="house_calculation_results">House Calculation Results</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
