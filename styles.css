@@ -1,0 +1,141 @@
+
+/* document styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    background-color: silver;
+    
+}
+
+/* banner */
+.banner{    
+    display: flex;
+    
+}
+
+/* header */
+.header {
+    background-color: rgba(32, 37, 41);
+    color: rgb(228, 222, 222);
+    padding: 2em;
+    margin: auto;  
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+}
+
+/* intruduction area */
+.intro-container{
+    display: flex;
+    margin: 2rem;
+    background-color: rgb(245,245,245);
+   
+    
+}
+ul {
+    list-style-type: none;
+    
+    flex-flow: row wrap;
+}
+li {
+    flex: 1;
+}
+
+.button-container {
+    /* display: flex; */
+    background-color: silver;
+    list-style: none;
+
+}
+/* button-list  {
+    justify-content: space-between; 
+    display: flex;
+
+} */
+button {
+    
+    width: 250px;
+    height: 60px;
+    flex: 1;
+    font-size: 120%;
+    background-color: rgb(32, 37, 41);
+    color: rgb(245,245,245);
+    font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+p {
+    font-size: 120%;
+}
+.explanation {
+    flex: 1;
+    padding: 2rem ;
+    background-color:rgb(245,245,245)!important;
+    margin: 0;
+}
+
+/* div container for investment input area */
+.investment-container {
+    padding: 4rem;
+    /* display: flex; */
+    
+
+}
+
+@media(min-width: 800px) {
+
+    .investment-container{
+        display: flex;
+        }
+    ul {
+        display: flex;
+    }
+
+    
+}
+/* investment input explanation area */
+.make-selections {
+    padding: .5em;
+    flex-grow: inherit;
+    background-color: rgb(245,245,245);
+    flex:1;
+    
+}
+
+.input-container {
+    padding-left: 4em;
+    padding-right: 6em;
+    flex: 2
+    
+}
+
+.chart-container {
+    display: flex;
+    padding: 3em;
+    background-color: silver;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+
+/* form styling */
+/* .form-row {
+    padding: 2em;
+    display: flex;
+}
+.form-row label {
+    padding-right: 1em;
+    color:rgb(77, 75, 75);
+}
+
+.form-row input {
+    flex: 1;
+} */
+
+
+
+
+
+

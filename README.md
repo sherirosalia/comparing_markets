@@ -1,8 +1,11 @@
 ## Comparing markets
 Which provides the biggest bang for your buck, property or stocks? User input comparison calculator. 
 
-## Work in progress
-Initial calculations started in Python which is evolving into a user interface built out with JQuery UI.
+## Almost done!
+Application is intereactive. Click on the website link and utilize the sliders as inputs.
+
+## Under construction:
+Styling and explantion text in progress.
 
 
 ## Two heads are better than one
