@@ -95,7 +95,7 @@ $( function() {
   };
 
   var layout = {
-    title:'Adding Names to Line and Scatter Plot'
+    title:'Stocks vs. Real Estate'
   };
   
   let data = [stock_graph, house_graph];

@@ -7,10 +7,22 @@ html, body {
     background-color: silver;
     
 }
-
+/* class added to header on scroll */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 102px;
+  }
 /* banner */
 .banner{    
     display: flex;
+    position: sticky;
+    z-index: 100;
+    
     
 }
 
@@ -24,6 +36,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;  
+    
     
 }
 
@@ -69,7 +82,7 @@ button {
     font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 p {
-    font-size: 120%;
+    font-size: 110%;
 }
 .explanation {
     flex: 1;
@@ -86,7 +99,7 @@ p {
 
 }
 
-@media(min-width: 800px) {
+@media(min-width: 850px) {
 
     .investment-container{
         display: flex;
@@ -122,7 +135,17 @@ p {
     flex-wrap: wrap; 
 }
 
-
+.footer-div {
+    display: flex;
+}
+footer {
+    background-color: rgba(32, 37, 41);
+    color: rgb(228, 222, 222);
+    padding: 4em;
+    margin: auto;  
+    flex-grow: 1;
+    
+}
 /* form styling */
 /* .form-row {
     padding: 2em;

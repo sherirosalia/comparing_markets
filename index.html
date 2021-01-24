@@ -9,31 +9,38 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="magic.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="banner">
+    <div class="wrapper">
+    <div class="banner" id=my_banner>
         <div class="header">
             <h1>Stocks or Real Estate?</h1>
         </div>
     </div>  <!-- end of banner div -->
-
+<div class="content">
     <div class="intro-container">
 
         <div class="explanation">
-            <h2>Where are you going to put your money?</h2>
-            <p>This site is essentially an application to help understand the 
+            <div>
+            <h2>Where to Invest?</h2>
+            <p>This site is an application to help understand
                 how investing in the stock market compares to real estate. 
-                The basic framework is finished. Right now all of the buttons 
-                produce only one calculation, and the names are placeholders.
-                Additonal calculations and explanation text is currently in progress.
-                Please enjoy playing with the inputs that will display final 
-                results in the chart above.
+                The buttons below hold some calculation presets that display results in 
+                the chart below, and <a href="#footer_link_to">we</a> hope you take us up on the invitation to play with the
+                input sliders below the chart to visualize a variety of scenarios.
             </p>
 
-        </div>   <!-- end of explanation div -->
+            <h2>The Code</h2>
+            <p>
+                An explanation of strategy is at the bottom of this page. Code and calculations on  <a href="https://github.com/sherirosalia/comparing_markets">GitHub.</a>
+            </p>
+            
+        </div>
+    </div>   <!-- end of explanation div -->
 
-    </div> <!-- end of grid container div -->
+    </div> <!-- end of intro container div -->
 
     <div class="button_container">
         <ul>
@@ -51,14 +58,14 @@
             </li>
         </ul>
     </div>   <!-- end of button container -->
-
     
 
     <div class="chart-container">
-        <div class="title">
+        <!-- *** uncomment to put a title and paragraph above chart -->
+        <!-- <div class="title">
             <h2>Chart</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, molestiae?</p>
-        </div>
+        </div> -->
         <div id="chart" style="width:700px;height:350px;"></div>
     </div>  
 
@@ -66,14 +73,13 @@
 
         <div class="explanation">
             <h2>Where are you going to put your money?</h2>
-            <p>This site is essentially an application to help understand the 
+            <p>This site is an application to help understand
                 how investing in the stock market compares to real estate. 
-                The basic framework is finished. Right now all of the buttons 
-                produce only one calculation, and the names are placeholders.
-                Additonal calculations and explanation text is currently in progress.
-                Please enjoy playing with the inputs that will display final 
-                results in the chart above.
+                The buttons below hold some calculation presets that display results in 
+                the chart below, and we hope you take us up on the invitation to play with the
+                input sliders below the chart to visualize a variety of scenarios. 
             </p>
+
             <h2>Helpful References</h2>
             
             <ol>
@@ -101,9 +107,9 @@
     <div class="investment-container">
         <div class="make-selections">
             <h2>Investment Inputs</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
-                cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
-                quaerat dignissimos nemo. 
+            <p>You have choices to make! How much money do you want to start off with and for how long are you willing 
+                to leave it invested? Give it some thought, adjust the sliders and continue on to the stock and real estate
+                related inputs.
             </p>
         </div>
 
@@ -124,9 +130,12 @@
 <div class="investment-container">
     <div class="make-selections">
         <h2>Stock Market</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
-            cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
-            quaerat dignissimos nemo. References: <a href="https://www.businessinsider.com/personal-finance/average-stock-market-return">Historical Stock Market Results</a>
+        <p>Select the interest rate return with this slider.</p>
+        <p>Do you "prefer to play it safe" with 
+            bonds and treasury bills or prefer the potentially greater returns that come with higher risk? 
+            Although the broader stock market has historically 
+            gone up approximately 10% a year, there is great variation between investment vehicles and time periods. 
+            References: <a href="https://www.businessinsider.com/personal-finance/average-stock-market-return">Historical Stock Market Results</a>
         </p>
     </div>
 
@@ -152,11 +161,19 @@
 <div class="investment-container">
     <div class="make-selections">
         <h2>Real Estate Market</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aut, officia vero odit sit 
-            cumque dicta magnam! Saepe quibusdam accusantium sed accusamus 
-            quaerat dignissimos nemo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Dolores possimus numquam, quis vitae minus quos. References: <a href="https://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx?pid=sembrmtg&ttcid=%2Bmortgage%7Cc%7Ckwd-1690752741%7Cg%7C9061181&utm_source=google&utm_medium=cpc&utm_term=%2Bmortgage&utm_cmpid=12005892161&utm_adgid=112813884901&utm_tgtid=kwd-1690752741&utm_mt=b&utm_adid=490037143829&utm_dvc=c&utm_ntwk=g&utm_adpos=&utm_plcmnt=&utm_locphysid=9061181&utm_locintid=&utm_feeditemid=26501184656&utm_devicemdl=&utm_plcmnttgt=&utm_campaign=sembrmtg&utm_kwdid=%7Bkwdid%7D&gclid=Cj0KCQiA0rSABhDlARIsAJtjfCcL2DSGHRg07NejzBot1qb3n4bPJ54D0UJdPBcouxLBF5cg_l14MWgaAqffEALw_wcB">Mortgage Calculator</a>
+        <p>Some of the considerations related to property investment in addition to appreciation 
+            are repair, maintenance, taxes, insurance, vacancy rates and selling costs such as realtor 
+            commissions. Additionally, real estate values are location dependent with rural or low income 
+            areas generally less likely to accelerate in value than their counterparts but also may be less expensive 
+            to maintain. Other things to consider when evaluating real estate investment is the time consuming nature 
+            and potentially greater tax advantages. 
         </p>
+        <p>
+            Selling costs of 6% are automatically calculated for the user. This is based on 
+            a broker commission of 5%. The remaining 1% is for title costs, buyer negotiated 
+            credits and attorney fees.
+        </p>
+
     </div>
 
 
@@ -193,12 +210,51 @@
     </div>
 
     </div>
-    
-]
-
-
 </div>
+    <div class="intro-container">
+
+        <div class="explanation">
+            <div>
+
+            <h2>Real Estate Calculation Parameters</h2>
+            <p>
+              The buttons produce results that rely, with some variation on the following for real estate: Invested amount is considered 
+              as a 20% deposit on a house and therefore the home value is 5 times this figure. 
+              Also, we assumed a monthly rental income that covers
+              mortgage, insurance and taxes. Additionally, we factored a vacancy rate of 4% and appreciation of 3.5%. There is some variation in 
+              the "Strong Real Estate" calculation which assumes a handy landlord and a bit of good luck. To see specifics, reference the slider output below the chart. 
+            </p>
+            <h2>Stock Calculation</h2>
+            <p>
+                Stock appreciation is compounded just as the real estate values are, however the initial investment amount 
+                is automatically deducted, so what is reflected in the stock investment output is the net difference between 
+                final portfolio value less the initial amount. 
+            </p>
+            <h2>Caveats</h2>
+              <p>
+              Some <strong>caveats</strong> to bear in mind are that real estate mortgages are amortized. This is not reflected in the 
+              results, so at the end of 30 years, one could argue that $200,000 (the mortgage amount) should be added to the final calculation because 
+              the mortgage would be paid off, however a counter argument might be that to keep things equal, more money should 
+              be added to the stock market investment too. This is something <a href="#footer_link_to">we</a> chose to keep out of our calculations and 
+              therefore up it is up to the reader to adjust.  
+              
+            </p>
+
+
+            
+        </div>
+    </div>   <!-- end of explanation div -->
+
+    </div> <!-- end of grid container div -->
+
+</div>  <!-- end of content container -->
+</div> <!-- end of wrapper container -->
+<footer>
+    <a id="footer_link_to">&#169; Copyright 2021</a> | 🌹 Sheri Rosalia
+
+</footer>
 <script src="button_functions.js"></script>
+<script src="header.js"></script>
 
     
 </body>
