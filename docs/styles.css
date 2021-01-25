@@ -168,11 +168,11 @@ footer a:hover {
     ;
   }
 .footer-middle {
-    flex-grow: 3,
+    flex: 3,
 }
 
 .footer-right {
-    flex-grow: 1;
+    flex: 1;
 }
 
 
