@@ -135,30 +135,45 @@ p {
     flex-wrap: wrap; 
 }
 
-.footer-div {
-    display: flex;
-}
 footer {
     background-color: rgba(32, 37, 41);
     color: rgb(228, 222, 222);
-    padding: 4em;
-    margin: auto;  
-    flex-grow: 1;
+    padding: 2em;
+    /* margin: auto;   */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    }
+
+.footer-content{
+    padding: 2em;
+}
+.footer-left {
+    flex-grow: 3;
+    color: rgb(228, 222, 222);
+
     
 }
-/* form styling */
-/* .form-row {
-    padding: 2em;
-    display: flex;
-}
-.form-row label {
-    padding-right: 1em;
-    color:rgb(77, 75, 75);
+
+footer a {
+    text-decoration: none;
+    color: rgb(228, 222, 222);
 }
 
-.form-row input {
-    flex: 1;
-} */
+footer a:hover {
+    color: rgb(122, 165, 122);
+    
+    text-decoration: none;
+    ;
+  }
+.footer-middle {
+    flex-grow: 3,
+}
+
+.footer-right {
+    flex-grow: 1;
+}
 
 
 
