@@ -3,9 +3,9 @@
 
  
 $(document).ready(function() {
-  $('#piggy').html('<img src="../images/piggy_bank_cropped.png">');
+  $('#piggy').html('<img src="piggy_bank_cropped.png">');
 });
-
+// images/piggy_bank_cropped.png
 $(document).ready(function(){
 
     $("#piggy").click(function(){
