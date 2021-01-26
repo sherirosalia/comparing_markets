@@ -21,6 +21,6 @@ a user controlled interface to assist evaluation of investing in various vehicle
 Collaboration between [Sheri Rosalia](https//sherirosalia.com) and [Yana Malyesheva](https://sites.google.com/site/yanamalportfolio/)
 
 ## Thanks to Fabian Blank for image
-![Investing](images/piggy_bank.png)
+![](/images/piggy_bank.png)
 
 <span>Photo by <a href="https://unsplash.com/@blankerwahnsinn?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Fabian Blank</a> on <a href="https://unsplash.com/s/photos/invest?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
