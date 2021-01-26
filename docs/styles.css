@@ -108,8 +108,10 @@ p {
         display: flex;
     }
 
-    
+
 }
+
+
 /* investment input explanation area */
 .make-selections {
     padding: .5em;
@@ -139,19 +141,24 @@ footer {
     background-color: rgba(32, 37, 41);
     color: rgb(228, 222, 222);
     padding: 2em;
-    /* margin: auto;   */
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     }
 
 .footer-content{
     padding: 2em;
 }
-.footer-left {
-    flex-grow: 3;
+.footer-collaborators {
+    /* flex-grow: 3; */
     color: rgb(228, 222, 222);
+    flex: 1;
+    
 
     
 }
@@ -167,15 +174,35 @@ footer a:hover {
     text-decoration: none;
     ;
   }
-.footer-middle {
-    flex: 3,
-}
+
 
 .footer-right {
     flex: 1;
+    
 }
 
+/* footer:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    } */
 
+.piggy {
+    flex: 1;
+    
+    
+}
+
+#piggy img {
+    height: 120px;
+    width: auto;
+    
+}
+
+.piggy-comment {
+    flex:2;
+    
+}
 
 
 
